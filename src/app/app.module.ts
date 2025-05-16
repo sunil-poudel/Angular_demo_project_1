@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
+import {provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -12,9 +14,9 @@ import { WeatherComponent } from './weather/weather.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

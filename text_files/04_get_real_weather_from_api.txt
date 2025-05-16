@@ -12,18 +12,20 @@ This is how you request the weather:
           appid=YOUR_API_KEY → your API key
           units=metric → for Celsius
 
-⚙️ 3. Add HttpClientModule to Your App
-Open src/app/app.module.ts and add:
+⚙️ 3. Add HttpClientModule to Your App (update main.ts as below)
 
-        import { HttpClientModule } from '@angular/common/http';
+                    bootstrapApplication(AppComponent,{
+                      providers: [
+                        provideHttpClient(withInterceptorsFromDi())  // ✅ This provides HttpClient properly
+                      ]
+                    })
+                      .catch((err) => console.error(err));
 
-        @NgModule({
-          imports: [
-            BrowserModule,
-            FormsModule,
-            HttpClientModule  // ✅ add this
-          ],
-        })
+
+                   👇 Breakdown:
+                   provideHttpClient() — replaces HttpClientModule.
+
+                   withInterceptorsFromDi() — allows your interceptors (like auth, logging, etc.) to still be injected and used like before.
 
 
 🧠 4. Update weather.component.ts to Fetch Data
