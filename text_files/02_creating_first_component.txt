@@ -1,0 +1,36 @@
+✅ Step 2: Create Your First Component
+  Let’s create a new component where we’ll build the weather UI.
+
+🧱 What’s a Component?
+  Think of a component like a small part of your page.
+  We’ll make one called weather.
+
+🛠 How to Create It in WebStorm
+  Open the Terminal in WebStorm (bottom tab).
+  Run this command:
+
+  ng generate component weather
+
+    ✅ This will:
+
+    Create a new folder src/app/weather
+
+    Add 4 files: .ts, .html, .css, .spec.ts
+
+    Automatically register it in your app
+
+✨ Show It on the Page
+  Now, open src/app/app.component.html and replace everything with:
+
+    <h1>🌤 Weather App</h1>
+    <app-weather></app-weather>
+    That <app-weather> is the selector of your new component. It shows the weather component inside the main app.
+
+✅ Done?
+
+You should now see:
+
+Copy
+Edit
+🌤 Weather App
+weather works!
