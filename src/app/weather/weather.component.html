@@ -1,4 +1,13 @@
 <input [(ngModel)]="city" placeholder="enter name of the city"/>
 <button (click)="getWeather()">Search</button>
 
-<p *ngIf="city">You entered {{city}}</p>
+<!--<p *ngIf="city">You entered {{city}}</p>-->
+
+<h5>Weather report for {{city}}</h5>
+
+<p *ngIf="weatherData">
+  Temperature = {{weatherData.main.temp}} degree celsius <br>
+  Latitude = {{weatherData.coord.lat}} <br>
+  Longitude = {{weatherData.coord.lon}} <br>
+  Weather = {{weatherData.weather[0].description}} <br>
+</p>
