@@ -1,0 +1,82 @@
+✅ Step 3: Add Input Box and Button
+We’ll add:
+
+  -> An input box where the user types a city name
+
+  -> A button to "Search"
+
+  -> A simple variable in your component to store the city
+
+🧑‍💻 1. Update weather.component.html
+Replace everything with this:
+
+    <h2>Check the weather</h2>
+
+    <input [(ngModel)]="city" placeholder="Enter city name" />
+    <button (click)="getWeather()">Search</button>
+
+    <p *ngIf="city">You entered: {{ city }}</p>
+
+🧠 What This Does
+    [(ngModel)]="city" two-way binds input value to the city variable
+
+    (click)="getWeather()" runs a function when the button is clicked
+
+    {{ city }} shows what the user typed
+
+    *ngIf="city" only shows the line if city is not empty
+
+🛠 2. Add Logic to weather.component.ts
+Open src/app/weather/weather.component.ts and update it:
+
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-weather',
+      templateUrl: './weather.component.html',
+      styleUrls: ['./weather.component.css']
+    })
+    export class WeatherComponent {
+      city: string = '';
+
+      getWeather() {
+        console.log("Getting weather for:", this.city);
+      }
+    }
+
+⚠️ 3. Enable FormsModule
+To use [(ngModel)], you must import FormsModule in app.module.ts.
+
+Open src/app/app.module.ts and:
+
+Add this at the top:
+  import { FormsModule } from '@angular/forms';
+
+Add FormsModule to the imports array:
+    @NgModule({
+      declarations: [
+        AppComponent,
+        WeatherComponent
+      ],
+      imports: [
+        BrowserModule,
+        FormsModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+✅ Now Try It
+Type a city like London
+
+Click "Search"
+
+You should see "You entered: London" and the console shows the log
+
+
+
+
+
+
+
+
+

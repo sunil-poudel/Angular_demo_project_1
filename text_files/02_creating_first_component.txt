@@ -24,13 +24,12 @@
 
     <h1>🌤 Weather App</h1>
     <app-weather></app-weather>
-    That <app-weather> is the selector of your new component. It shows the weather component inside the main app.
+
+      -> That <app-weather> is the selector of your new component. It shows the weather component inside the main app.
 
 ✅ Done?
 
 You should now see:
 
-Copy
-Edit
-🌤 Weather App
-weather works!
+  🌤 Weather App
+  weather works!
