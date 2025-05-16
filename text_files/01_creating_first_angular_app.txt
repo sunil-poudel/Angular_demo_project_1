@@ -1,0 +1,32 @@
+
+from ChatGPT
+
+✅ Step-by-Step: Angular in WebStorm
+🛠 1. Install Angular CLI (only once)
+      npm install -g @angular/cli
+
+🆕 2. Create New Angular Project
+    File > New > Project...
+
+    Choose Angular CLI on the left
+
+    Enter a project name, e.g. weather-app
+
+    Select Node.js interpreter if asked (WebStorm should detect it)
+
+    Click Create
+
+        WebStorm will run ng new behind the scenes.
+
+🧼 3. Skip Routing and Use CSS (if prompted)
+When the terminal asks:
+    Routing? → Select No
+    Styles? → Choose CSS
+
+▶️ 4. Run Your Angular App
+Once setup is complete:
+    Open Terminal in WebStorm (bottom tab)
+      ng serve
+    Then open your browser and go to:
+      http://localhost:4200
+You should see "Welcome to weather-app"

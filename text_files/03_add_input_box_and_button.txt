@@ -26,6 +26,22 @@ Replace everything with this:
 
     *ngIf="city" only shows the line if city is not empty
 
+    ->> again:
+        🔹<input [(ngModel)]="city" placeholder="Enter city name" />
+        This is an input field where the user types a city name.
+
+        [(ngModel)]="city" does two-way data binding:
+
+        It binds the input field to a variable named city in your TypeScript component.
+
+        If the user types something, it updates the city variable.
+
+        If the variable city changes in the code, it updates the input field too.
+
+        placeholder="Enter city name" shows light text inside the box until the user types something.
+
+        🔸 For this to work, don’t forget to import FormsModule in your AppModule.
+
 🛠 2. Add Logic to weather.component.ts
 Open src/app/weather/weather.component.ts and update it:
 
@@ -47,7 +63,7 @@ Open src/app/weather/weather.component.ts and update it:
 ⚠️ 3. Enable FormsModule
 To use [(ngModel)], you must import FormsModule in app.module.ts.
 
-Open src/app/app.module.ts and:
+Open src/app/app.module.ts and: (create new if doesn't exist and add codes given at last of this file).
 
 Add this at the top:
   import { FormsModule } from '@angular/forms';
@@ -71,6 +87,30 @@ Type a city like London
 Click "Search"
 
 You should see "You entered: London" and the console shows the log
+
+
+Note: inside app.module.ts
+        import { NgModule } from '@angular/core';
+        import { BrowserModule } from '@angular/platform-browser';
+        import { FormsModule } from '@angular/forms';
+
+        import { AppComponent } from './app.component';
+        import { WeatherComponent } from './weather/weather.component';
+
+        @NgModule({
+          declarations: [
+            AppComponent,
+            WeatherComponent
+          ],
+          imports: [
+            BrowserModule,
+            FormsModule
+          ],
+          providers: [],
+          bootstrap: [AppComponent]
+        })
+        export class AppModule { }
+
 
 
 

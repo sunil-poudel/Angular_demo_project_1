@@ -1,1 +1,5 @@
-<p>weather works!</p>
+
+<input [(ngModel)]="city" placeholder="enter name of the city"/>
+<button (click)="getWeather()">Search</button>
+
+<p *ngIf="city">You entered {{city}}</p>
